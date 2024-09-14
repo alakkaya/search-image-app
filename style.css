@@ -87,3 +87,19 @@
 .imagelist-wrapper > .card img {
     border-radius: 5px;
 }
+
+.loader{
+    border: 8px solid #f3f3f3; /* Gri renkli dış kenarlık */
+    border-top: 8px solid #3498db; /* Mavi renkli üst kenarlık */
+    border-radius: 50%; /* Daire şeklinde */
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite; /* Döndürme animasyonu */
+    margin: 50px auto; /* Merkezi hizalama */
+    display: none; /* Başlangıçta gizli */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

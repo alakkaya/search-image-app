@@ -5,6 +5,7 @@ const buttonWrapper = document.querySelector(".button-wrapper");
 const searchButton = document.querySelector("#searchButton");
 const clearButton = document.querySelector("#clearButton");
 const imageListWrapper = document.querySelector(".imagelist-wrapper");
+const loader = document.querySelector("#loader");
 
 runEventListeners();
 
@@ -20,6 +21,9 @@ function clear() {
 }
 
 function search(e) {
+  // Yükleniyor ikonunu göster
+  loader.style.display = "block";
+
   // Eğer daha önce görseller varsa, bunları temizler
   if (imageListWrapper.hasChildNodes()) {
     imageListWrapper.innerHTML = "";
@@ -38,6 +42,7 @@ function search(e) {
         // console.log();
         addImageToUI(image.urls.small);
       });
+      loader.style.display = "none";
     })
     .catch((err) => console.log(err));
 
