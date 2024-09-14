@@ -1,57 +1,89 @@
-.form-wrapper{
+.form-wrapper {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: 20px 0px
-}
-#form{
-    display: flex;
-    flex-direction: column;
+    margin: 20px 0px;
     align-items: center;
 }
 
-#searchInput{
-    width: 75%;
-    padding: 5px;
-    border-radius: 5px;
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#searchInput {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    border-radius: 8px;
     text-align: center;
+    border: 2px solid #ccc;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
 }
 
-.button-wrapper{
-    margin: 10px 0px;
+#searchInput:focus {
+    border-color: #464646;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#searchButton{
-    width: 110px;
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#searchButton, #clearButton {
+    width: 120px;
     border-radius: 5px;
     border: none;
-    padding: 5px;
+    padding: 10px;
     background-color: #464646;
     color: white;
-    box-shadow: 1px 3px 5px lightgrey;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#clearButton{
-    width: 110px;
-    border-radius: 5px;
-    border: none;
-    padding: 5px;
+#searchButton:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+#clearButton {
     background-color: #c82424;
-    color: white;
-    box-shadow: 1px 3px 5px lightgrey;
 }
 
-.imagelist-wrapper{
+#clearButton:hover {
+    background-color: #a51e1e;
+    transform: translateY(-2px);
+}
+
+.imagelist-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 20px;
 }
 
-.imagelist-wrapper > .card{
-    margin:20px;
-    border:1px solid grey;
-    padding:15px;
-    border-radius:5px;
-    box-shadow: 3px 5px 8px grey;
+.imagelist-wrapper > .card {
+    margin: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.imagelist-wrapper > .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.imagelist-wrapper > .card img {
+    border-radius: 5px;
 }
