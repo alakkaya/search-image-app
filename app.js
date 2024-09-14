@@ -15,10 +15,16 @@ function runEventListeners() {
 
 function clear() {
   searchInput.value = "";
-  Array.from(imageListWrapper.children).forEach((child) => child.remove());
+  //   Array.from(imageListWrapper.children).forEach((child) => child.remove());
+  imageListWrapper.innerHTML = "";
 }
 
 function search(e) {
+  // Eğer daha önce görseller varsa, bunları temizler
+  if (imageListWrapper.hasChildNodes()) {
+    imageListWrapper.innerHTML = "";
+  }
+
   const value = searchInput.value.trim();
   fetch(`https://api.unsplash.com/search/photos?query=${value}`, {
     method: "GET",
